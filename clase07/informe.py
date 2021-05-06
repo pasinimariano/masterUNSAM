@@ -15,7 +15,7 @@ def leer_camion(file_name):
 
 def leer_precios(file_name):
     """
-        Devuelve una lista de diccionarios con los datos del archivo.
+        Devuelve una lista de tuplas con los datos del archivo.
     """
     return parse_interable(file_name, has_headers=False, types=[str, float])
 
@@ -23,7 +23,7 @@ def leer_precios(file_name):
 def obtener_informe(file1, file2):
     """
         Devolvera una lista de diccionarios unificando dos archivos
-        y generara una diferencia entre los precios de ambos (ganancia o perdida).
+        y generara una diferencia entre los precios de ambos.
     """
     return np.array([dict(nombre=str(x['nombre']),
                           cajones=int(x['cajones']),
@@ -35,7 +35,7 @@ def obtener_informe(file1, file2):
 
 def formato_informe(informe):
     """
-        Encargada de dar formato a los datos.
+        Da formato a los datos.
     """
     headers = ('Nombre', 'Cajones', 'Precio', 'Cambio')
     sep = ('-' * 10 + ' ') * len(headers)
@@ -48,9 +48,8 @@ def formato_informe(informe):
 
 def main(argv):
     """
-        Se encargara de parsear los datos de los archivos (utilizando la funcion importada parse_csv()),
-        para luego pasarselos como parametro a la funcion obtener_informe().
-        Por ultimo se le dara formato al resultado obtenido.
+        Parsea los datos de los archivos, luego los pasa como parametro.
+        Por ultimo se le dara formato al resultado.
     """
     if len(sys.argv) != 3:
         raise SystemExit(f'Uso adecuado: {sys.argv[0]} ' 'path:archivo_camion path:archivo_precios')

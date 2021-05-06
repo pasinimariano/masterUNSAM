@@ -7,7 +7,7 @@ import sys
 
 def main(argv):
     """
-    Computa el precio total del camion (cajones * precio) de un archivo
+    Computa el precio total del camion
     """
     if len(sys.argv) != 2:
         raise SystemExit(f'Uso adecuado: {sys.argv[0]} ' 'path:archivo_camion')

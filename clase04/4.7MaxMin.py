@@ -18,7 +18,7 @@ def comparacion(lista):
 
     data = f'Max: {num_max}, Min: {num_min}'     
     
-    return  data
+    return data
 
 
 l1 = [1,2,7,2,3,4]
